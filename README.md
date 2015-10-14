@@ -1,6 +1,8 @@
 # docker-consultant
 Web UI to manipulate docker compose for consultant
 
+[![Circle CI](https://circleci.com/gh/sebglon/docker-consultant.svg?style=svg)](https://circleci.com/gh/sebglon/docker-consultant)
+
 # compose-js
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
