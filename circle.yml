@@ -1,0 +1,5 @@
+ideployment:
+  staging:
+    branch: master
+    heroku:
+      appname: docker-consultant
