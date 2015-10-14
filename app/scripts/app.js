@@ -2,21 +2,20 @@
 
 /**
  * @ngdoc overview
- * @name composeJsApp
+ * @name dockerConsultantApp
  * @description
- * # composeJsApp
+ * # dockerConsultantApp
  *
  * Main module of the application.
  */
 angular
-  .module('composeJsApp', [
+  .module('dockerConsultantApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'pouchdb'
+    'ngTouch'
   ])
   .config(function ($routeProvider) {
     $routeProvider

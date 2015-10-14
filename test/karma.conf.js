@@ -1,6 +1,6 @@
 // Karma configuration
 // http://karma-runner.github.io/0.12/config/configuration-file.html
-// Generated on 2015-10-13 using
+// Generated on 2015-10-14 using
 // generator-karma 1.0.0
 
 module.exports = function(config) {
@@ -21,7 +21,6 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-'bower_components/bind-polyfill/index.js',
       // bower:js
       'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
@@ -32,13 +31,11 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
-      'bower_components/pouchdb/dist/pouchdb.js',
-      'bower_components/angular-pouchdb/angular-pouchdb.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
       "test/mock/**/*.js",
-      "test/spec/**/*.js",
+      "test/spec/**/*.js"
     ],
 
     // list of files / patterns to exclude
@@ -63,8 +60,7 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       "karma-phantomjs-launcher",
-      "karma-jasmine",
-      "pouchdb"
+      "karma-jasmine"
     ],
 
     // Continuous Integration mode
