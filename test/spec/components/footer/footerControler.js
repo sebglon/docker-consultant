@@ -6,17 +6,16 @@ describe('Controller: FooterController', function () {
   beforeEach(module('consultantui.services.docker', 'footer'));
 
   var FooterController,
-    scope, $httpBackend;
+    scope, $httpBackend, $rootScope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, _$rootScope_, _$httpBackend_) {
+  beforeEach(inject(function ($controller, $injector, _$httpBackend_) {
     $httpBackend = _$httpBackend_;
-    scope = _$rootScope_.$new();
-    _$rootScope_.hostUrl = 'dockerapi';
+    $rootScope = $injector.get('$rootScope');
+    $rootScope.hostUrl = 'dockerapi';
+    scope = $rootScope.$new();
     FooterController = $controller('FooterController', {
       $scope: scope,
-      $rootScope: scope
-
       // place here mocked dependencies
     });
   }));
@@ -33,9 +32,11 @@ describe('Controller: FooterController', function () {
       "Experimental": false
     });
     expect(scope.template).toBeDefined();
-
+    expect($rootScope.hostUrl).toEqual('dockerapi');
     $httpBackend.flush();
-    expect(scope.apiVersion).toBeDefined();
-    expect(scope.apiVersion).toEqualData('1.20');
+
+    expect($rootScope.apiVersion).toBeDefined();
+
+    expect($rootScope.apiVersion).toEqual('1.20');
   });
 });
