@@ -56,7 +56,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/app.js', '<%= yeoman.app %>/services/{,*/}*.js', '<%= yeoman.app %>/components/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       },
       includeSource: {
         files: ['<%= yeoman.app %>/index.html'],
-        tasks: ['includeSource:server']
+        tasks: ['includeSource']
       }
     },
 
@@ -149,7 +149,7 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
+          '<%= yeoman.app %>/{,*/}*.js'
         ]
       },
       test: {
@@ -229,7 +229,7 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          '<%= yeoman.dist %>/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
@@ -243,16 +243,7 @@ module.exports = function (grunt) {
     useminPrepare: {
       html: '<%= yeoman.dist %>/index.html',
       options: {
-        dest: '<%= yeoman.dist %>',
-        flow: {
-          html: {
-            steps: {
-              js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
-            },
-            post: {}
-          }
-        }
+        dest: '<%= yeoman.dist %>'
       }
     },
 
@@ -260,7 +251,7 @@ module.exports = function (grunt) {
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
-      js: ['<%= yeoman.dist %>/scripts/{,*/}*.js'],
+      js: ['<%= yeoman.dist %>/{,*/}*.js'],
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>',
@@ -343,10 +334,10 @@ module.exports = function (grunt) {
         options: {
           module: 'dockerConsultantApp',
           htmlmin: '<%= htmlmin.dist.options %>',
-          usemin: 'scripts/scripts.js'
+          usemin: 'scripts/application.js'
         },
         cwd: '<%= yeoman.app %>',
-        src: 'views/{,*/}*.html',
+        src: ['views/{,*/}*.html', 'components/{,*/}*.html'],
         dest: '.tmp/templateCache.js'
       }
     },
@@ -357,9 +348,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
+          cwd: '.tmp/concat',
           src: '*.js',
-          dest: '.tmp/concat/scripts'
+          dest: '.tmp/concat'
         }]
       }
     },
@@ -438,6 +429,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'includeSource',
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
@@ -462,7 +454,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'includeSource:dist',
+    'includeSource',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

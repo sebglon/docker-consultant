@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name dockerConsultantApp.controller:AboutCtrl
+ * @name dockerConsultantApp.controller:AboutController
  * @description
- * # AboutCtrl
+ * # AboutController
  * Controller of the dockerConsultantApp
  */
 angular.module('dockerConsultantApp')
-  .controller('AboutCtrl', function () {
+  .controller('AboutController', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

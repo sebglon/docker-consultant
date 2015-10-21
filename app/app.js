@@ -15,21 +15,28 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'consultantui.services.docker',
+    'footer',
+    'container'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'MainController',
         controllerAs: 'main'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+        controller: 'AboutController',
         controllerAs: 'about'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .run(['$rootScope', function ($rootScope) {
+    $rootScope.hostUrl = 'http://localhost:2375';
+// Etc. Initialize here.
+  }]);
