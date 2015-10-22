@@ -3,7 +3,7 @@
 describe('Controller: FooterController', function () {
 
   // load the controller's module
-  beforeEach(module('consultantui.services.docker', 'footer'));
+  beforeEach(module('footer', 'consultantui.services.docker'));
 
   var FooterController,
     scope, $httpBackend, $rootScope;
