@@ -16,15 +16,30 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'pouchdb',
     'consultantui.services.docker',
+    'consultantui.services.compose',
     'footer',
-    'container'
+    'consultantui.container',
+    'consultantui.applications',
+    'consultantui.application',
+    'consultantui.services'
   ])
   .config(function ($routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainController',
+        controllerAs: 'main'
+      })
+      .when('/application/:id', {
+        templateUrl: 'components/application/application.html',
+        controller: 'ApplicationController',
+        controllerAs: 'main'
+      })
+      .when('/applications', {
+        templateUrl: 'components/applications/applications.html',
+        controller: 'ApplicationsController',
         controllerAs: 'main'
       })
       .when('/about', {
