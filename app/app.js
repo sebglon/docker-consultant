@@ -23,7 +23,8 @@ angular
     'consultantui.container',
     'consultantui.applications',
     'consultantui.application',
-    'consultantui.services'
+    'consultantui.services',
+    'consultantui.filter'
   ])
   .config(function ($routeProvider, $httpProvider) {
     $routeProvider

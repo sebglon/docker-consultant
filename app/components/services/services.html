@@ -1,4 +1,11 @@
 <div>
   <h5>{{name}}</h5>
 
+  <div ng-if="!edit">
+    <div>Image {{service.image}}</div>
+  </div>
+  <div ng-if="edit">
+    <div>Image <input type="text" ng-model="service.image | imageSpliter:'imagefull'"></div>
+  </div>
 </div>
+
