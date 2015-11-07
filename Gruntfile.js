@@ -35,7 +35,7 @@ module.exports = function (grunt) {
     includeSource: {
       options: {
         basePath: 'app',
-        baseUrl: '/',
+        baseUrl: '/'
       },
       server: {
         files: {
@@ -182,7 +182,7 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          map: true,
+          map: true
         },
         files: [{
           expand: true,
@@ -333,7 +333,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           module: 'dockerConsultantApp',
-          htmlmin: '<%= htmlmin.dist.options %>',
+          //  htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/application.js'
         },
         cwd: '<%= yeoman.app %>',
