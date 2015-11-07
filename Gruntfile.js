@@ -333,7 +333,7 @@ module.exports = function (grunt) {
       dist: {
         options: {
           module: 'dockerConsultantApp',
-          //  htmlmin: '<%= htmlmin.dist.options %>',
+          htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/application.js'
         },
         cwd: '<%= yeoman.app %>',
