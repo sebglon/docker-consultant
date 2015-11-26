@@ -1,0 +1,9 @@
+<div>
+    <h2>Dashbord</h2>
+
+    <div><h3>Current host <span class="label" [class.label-success]="ping">Up</span></h3>
+        <div><label>Remote url </label> {{config.hostUrl}}</div>
+        <div><label>version</label> {{hostVersion?.Version}}</div>
+        <div><label>API version</label> {{hostVersion?.ApiVersion}}</div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<h2>{{model.name}} details!</h2>
+<div>
+    <label>Services: </label>
+    <ul>
+        <li *ng-for="#service of model.services" (click)="onSelect(service)" [ng-class]="getSelectedClass(service)">
+            <label>Service name: </label>
+            <div *ng-if="selectedService==service"><input [(ng-model)]="service.name" placeholder="name"></div>
+            <div *ng-if="selectedService!=service">{{service.name}}</div>
+            <div>
+                <label>Image name: </label>
+                <div *ng-if="selectedService==service"><input [(ng-model)]="service.image.repo" placeholder="repo"><input [(ng-model)]="service.image.name" placeholder="name"><input [(ng-model)]="service.image.version" placeholder="version"></div>
+                <div *ng-if="selectedService!=service">{{service.image.fullname}}</div>
+            </div>
+        </li>
+    </ul>
+
+</div>

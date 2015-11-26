@@ -1,6 +1,10 @@
-/node_modules
+node_modules
+/dist
 /.tmp
 /.sass-cache
 /bower_components
-/dist
-**/.idea
+.idea
+typings
+src/**/*.js
+src/**/*.map
+jspm_packages

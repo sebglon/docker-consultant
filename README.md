@@ -13,3 +13,6 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## Link
+PouchDB on typescript : [pouchdb.d.ts](https://github.com/AGBrown/pouchdb.d.ts/blob/master/pouchdb.d.ts)
