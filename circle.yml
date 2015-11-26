@@ -1,6 +1,6 @@
 test:
   pre:
-    - bower install
+    - npm install
 deployment:
   staging:
     branch: master
