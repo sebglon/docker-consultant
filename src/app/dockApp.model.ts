@@ -2,13 +2,8 @@
  * Created by sgl on 09/11/15.
  */
 export class DockApp {
-    name:string;
-    services:Service[];
-
-    constructor(name,
-                services) {
-        this.name = name;
-        this.services = services;
+    constructor(public name: string,
+                public services: Service[]) {
     }
 }
 
