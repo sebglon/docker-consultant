@@ -1,1 +1,1 @@
-web: npm start
+web: live-server --open=src --entry-file=index.html
