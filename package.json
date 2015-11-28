@@ -19,7 +19,9 @@
     "typescript": "^1.6.2"
   },
   "engines": {
-    "node": "^4.2.1"
+    "node": "^4.2.1",
+    "live-server": "^0.8.1",
+    "typescript": "^1.6.2"
   },
   "description": "[![Circle CI](https://circleci.com/gh/sebglon/docker-consultant.svg?style=svg)](https://circleci.com/gh/sebglon/docker-consultant)",
   "repository": {
