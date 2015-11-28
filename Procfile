@@ -1,1 +1,1 @@
-web: live-server --open=src --entry-file=index.html
+web: live-server --open=src
