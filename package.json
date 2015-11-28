@@ -5,12 +5,11 @@
   "scripts": {
     "tsc": "tsc -p src -w",
     "start": "live-server --open=src",
-    "postinstall": "tsc -p src -w"
+    "postinstall": "bower install && tsc -p src -w"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.45",
     "bower-traceur-runtime": "git://github.com/jmcriffey/bower-traceur-runtime#0.0.87",
-    "live-server": "^0.8.2",
     "pouchdb": "^5.1.0",
     "systemjs": "0.19.5"
   },
