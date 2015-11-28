@@ -14,13 +14,13 @@
     "systemjs": "0.19.5"
   },
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "bower": "^1.6.8",
     "live-server": "^0.8.1",
     "typescript": "^1.6.2"
   },
   "engines": {
-    "node": "^4.2.1",
-    "live-server": "^0.8.1",
-    "typescript": "^1.6.2"
+    "node": "^4.2.1"
   },
   "description": "[![Circle CI](https://circleci.com/gh/sebglon/docker-consultant.svg?style=svg)](https://circleci.com/gh/sebglon/docker-consultant)",
   "repository": {
