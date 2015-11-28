@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "tsc": "tsc -p src -w",
-    "start": "live-server --open=src"
+    "start": "live-server --open=src --entry-file=src/index.html"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.45",
