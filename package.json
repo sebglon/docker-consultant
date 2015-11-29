@@ -5,7 +5,7 @@
   "scripts": {
     "tsc": "tsc -p src -w",
     "start": "live-server --open=src",
-    "postinstall": "tsc -p src -w"
+    "postinstall": "tsc -p src"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.45",
