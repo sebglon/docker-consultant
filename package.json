@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.45",
+    "bootstrap": "^3.3.6",
     "bower-traceur-runtime": "git://github.com/jmcriffey/bower-traceur-runtime#0.0.87",
     "pouchdb": "^5.1.0",
     "systemjs": "0.19.5"
