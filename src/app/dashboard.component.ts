@@ -43,7 +43,8 @@ export class DashboardComponent implements OnInit {
      */
     getActiveApps() {
         // TODO call service
-
+        var result:DockApp[];
+        return result;
     }
 
     getHostVersion() {
