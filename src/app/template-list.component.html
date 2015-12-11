@@ -1,0 +1,76 @@
+<h1>Templates</h1>
+<table class="table table-condensed table-hover table-striped table-bordered">
+    <thead>
+    <tr class="success vcenter form-group">
+        <td colspan="7">
+            <button type="button" class="btn btn-primary btn-sm"><span
+                    class="glyphicon glyphicon-refresh"></span><strong> Refresh</strong>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm">
+                <span ng-class="{'glyphicon glyphicon-unchecked':!showAllImagesFlag, 'glyphicon glyphicon-check':showAllImagesFlag}"></span><strong>
+                All</strong>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm"><span
+                    ng-class="{'glyphicon glyphicon-unchecked':!showUntaggedImagesFlag, 'glyphicon glyphicon-check':showUntaggedImagesFlag}"></span><strong>
+                Create</strong>
+            </button>
+            <label>Filter: <input ng-model="search.$"></label>
+            <strong>Items listed: <span class="badge">{{images.length}}</span></strong>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td width="1%" class="text-center">
+                    <span ng-class="{'glyphicon glyphicon-check':selectAllImagesFlag, 'glyphicon glyphicon-unchecked':!selectAllImagesFlag}"
+                          class="vcenter"
+                          ng-click="switchSelectAllImagesFlag()">
+                </span>
+        </td>
+        <td width="2%" class="text-center">
+            <strong>Control</strong>
+        </td>
+        <td width="10%" class="text-center" ng-click="changeSorting('tagString')">
+            <strong>Name</strong>
+                    <span class='fa'
+                          ng-class="{'fa-sort-amount-desc ':sort.column=='name' && sort.direction==='descending','fa-sort-amount-asc':sort.column=='name' && sort.direction==='ascending'}">
+                    </span>
+        </td>
+        <td width="20%" class="text-center" ng-click="changeSorting('Size')">
+            <strong>Description</strong>
+                    <span class='fa'
+                          ng-class="{'fa-sort-amount-desc ':sort.column=='description' && sort.direction==='descending','fa-sort-amount-asc':sort.column=='description' && sort.direction==='ascending'}">
+                    </span>
+        </td>
+        <td width="5%" class="text-center" ng-click="changeSorting('Created')">
+            <strong>Created</strong>
+                    <span class='fa'
+                          ng-class="{'fa-sort-amount-desc ':sort.column=='Created' && sort.direction==='descending','fa-sort-amount-asc':sort.column=='Created' && sort.direction==='ascending'}">
+                    </span>
+        </td>
+    </tr>
+    <tr ng-repeat="template of templates | filter:search | orderBy:sort.column:sort.desc">
+
+        <td class="text-center">
+                 <span ng-class="{'glyphicon glyphicon-check':image.selected, 'glyphicon glyphicon-unchecked':template!=selectedTemplate}"
+                       class="vcenter"
+                       ng-click="switchSelectedImage(image)">
+                </span>
+        </td>
+        <td class="text-center">
+            <button class="btn btn-danger btn-block btn-sm" ng-click="removeTemplate(template.Id)">
+                <strong>Remove</strong>
+            </button>
+        </td>
+        <td class="text-center">
+            <button class="btn btn-info btn-block btn-sm" ng-click="gotoDetail(template.name)">
+                <strong>{{template.name}}</strong>
+            </button>
+        </td>
+        <td class="text-left">
+            {{template.description}}
+        </td>
+        <td class="text-center">{{template.Created * 1000 | date:'dd-MM-yy HH:mm:ss'}}</td>
+    </tr>
+    </tbody>
+</table>

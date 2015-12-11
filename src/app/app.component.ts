@@ -3,6 +3,9 @@ import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Routes, APP_ROUTES} from './route.config';
 import {DockerService} from './docker.service';
 import {Settings} from './settings.model';
+import {DashboardComponent} from "./dashboard.component";
+import {TemplatesComponent} from "./template-list.component";
+import {ApplicationsListComponent} from "./applications-list.component";
 
 @Component({
     selector: 'docker-consultant',

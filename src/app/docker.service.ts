@@ -1,10 +1,10 @@
 /**
  * Created by sgl on 16/11/15.
  */
-import {Injectable, Inject} from 'angular2/angular2';
+import {Injectable, Inject, Observable} from 'angular2/angular2';
 import {DockApp} from './dockApp.model';
 import {Settings} from './settings.model';
-import {Http} from "angular2/http";
+import {Http, Response} from "angular2/http";
 
 @Injectable() export  class DockerService {
 
@@ -35,7 +35,8 @@ import {Http} from "angular2/http";
     getVolume(nate: string) {
 
     }
-    getHostVersion() : Object {
+
+    getHostVersion():Observable<Response> {
         return this.http.get(this.config.hostUrl + '/version');
     }
 

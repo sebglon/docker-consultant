@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <base href="/src/"/>
     <script src="../node_modules/bower-traceur-runtime/traceur-runtime.js"></script>
+    *
+    <script src="../node_modules/traceur/bin/traceur.js"></script>
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
     <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="../node_modules/angular2/bundles/router.dev.js"></script>
@@ -15,7 +17,15 @@
     <script src="../node_modules/pouchdb/dist/pouchdb.js"></script>
     <script>
         System.config({
-            packages: {'app': {defaultExtension: 'js'}}
+            packages: {
+                'app': {defaultExtension: 'js'},
+                'rxjs': {defaultExtension: 'js'}
+            },
+            paths: {
+                'rxjs/add/observable/*': '../node_modules/rxjs/add/observable/*',
+                'rxjs/add/operator/*': '../node_modules/rxjs/add/operator/*',
+                'rxjs/*': '../node_modules/rxjs/*'
+            }
         });
         System.import('app/bootstrap').catch(console.log.bind(console));
     </script>

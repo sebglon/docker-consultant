@@ -23,3 +23,22 @@ export class Image {
         return this.repo ? this.repo + '/' + this.name + ":" + this.version : this.name + ":" + this.version;
     }
 }
+
+export class Template {
+    constructor(public name:string,
+                public description:string,
+                public active:boolean,
+                public app:DockApp,
+                public query:Query[]) {
+    }
+
+    toApp() {
+        return
+    }
+}
+
+export class Query {
+    constructor(public query:string,
+                public answers:string) {
+    }
+}

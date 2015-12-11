@@ -1,10 +1,10 @@
 /**
  * Created by sgl on 15/11/15.
  */
-import {Inject} from 'angular2/angular2';
-import {Component, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {Inject, Component, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {Http, Response} from 'angular2/http';
+import 'rxjs/add/operator/map';
 import {Router} from 'angular2/router';
-import {Routes} from './route.config';
 import {DockApp} from './dockApp.model';
 import {DockerService} from './docker.service';
 import {Settings} from './settings.model';
@@ -20,11 +20,13 @@ export class DashboardComponent implements OnInit {
     public dockApps:DockApp[];
     public hostVersion:Object;
     public ping: boolean;
+    private _dockerService:DockerService;
 
-    constructor(private _router:Router, @Inject(DockerService) private _dockerService, @Inject("DockerServiceConfig") private config:Settings) {
+    constructor(private _router:Router, @Inject(DockerService) _dockerService, @Inject("DockerServiceConfig") private config:Settings) {
+        this._dockerService = _dockerService;
     }
 
-    onInit() {
+    ngOnInit() {
         this.dockApps = this.getActiveApps();
         this.getHostVersion();
         this.pingHost();
