@@ -8,6 +8,7 @@ import {Router} from 'angular2/router';
 import {DockApp} from './dockApp.model';
 import {DockerService} from './docker.service';
 import {Settings} from './settings.model';
+import {Routes} from './route.config';
 
 @Component({
     selector: 'consultant-dashboard',
@@ -37,7 +38,7 @@ export class DashboardComponent implements OnInit {
      * @param dockApp
      */
     gotoDetail(dockApp:DockApp) {
-        // this._router.navigate([Routes.detail.as, {id: dockApp.id}]);
+        this._router.navigate([Routes.template.name, {id: dockApp.id}]);
     }
 
     /**

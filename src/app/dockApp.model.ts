@@ -2,6 +2,8 @@
  * Created by sgl on 09/11/15.
  */
 export class DockApp {
+    public id:string;
+
     constructor(public name: string,
                 public services: Service[]) {
     }
@@ -25,7 +27,8 @@ export class Image {
 }
 
 export class Template {
-    constructor(public name:string,
+    constructor(public id:string,
+                public name:string,
                 public description:string,
                 public active:boolean,
                 public app:DockApp,

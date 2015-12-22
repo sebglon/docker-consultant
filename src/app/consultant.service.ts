@@ -20,6 +20,6 @@ import PouchDB = pouchdb.thenable.PouchDB;
     }
 
     getTemplates() {
-        this.db.allDocs();
+        return this.db.allDocs();
     }
 }

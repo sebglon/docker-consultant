@@ -2,23 +2,22 @@
  * Created by sgl on 15/11/15.
  */
 import {Inject, Component, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {Template} from '../app/dockApp.model';
 import {Router} from 'angular2/router';
-import {Template} from './dockApp.model';
-import {ConsultantService} from "./consultant.service";
-import {Ng2Table} from 'ng2-table';
+import {ConsultantService} from "../app/consultant.service";
 
 @Component({
-    selector: 'consultant-templates',
-    templateUrl: 'app/template-list.component.html',
-    styleUrls: ['app/template-list.component.css'],
-    directives: [CORE_DIRECTIVES, Ng2Table]
+    selector: 'service-component',
+    templateUrl: 'component/service.component.html',
+    styleUrls: ['app/service.component.css'],
+    directives: [CORE_DIRECTIVES]
 })
 export class TemplatesComponent implements OnInit {
 
     constructor(private _router:Router, @Inject(ConsultantService) private _consultService) {
     }
 
-    public templates:Array<Template> = [];
+    public templates:Template[];
     public selectedTemplate:Template;
 
     ngOnInit() {
@@ -31,6 +30,7 @@ export class TemplatesComponent implements OnInit {
         this._consultService.getTemplates().then(data => this.templates = data);
         return this.templates;
     }
+
     /**
      * Open select App detail.
      * @param dockApp
